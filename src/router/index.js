@@ -1,16 +1,16 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 
 const Home = () => import('views/home/Home')
 const Category = () => import('views/category/Category')
 const Cart = () => import('views/cart/Cart')
 const Profile = () => import('views/profile/Profile')
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '',
     redirect: '/home'
   },
   {
@@ -29,9 +29,11 @@ const routes = [
     path: '/profile',
     component: Profile
   }
-];
-
-export default new Router({
+]
+const router = new VueRouter({
   routes,
   mode: 'history'
 })
+
+
+export default router
