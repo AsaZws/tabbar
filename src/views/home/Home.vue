@@ -8,46 +8,46 @@
               :pull-up-load="true"
               @pullingUp="loadMore">
       </scroll> -->
-      <home-swiper :banners="banners"/>
-      <recommend-view :recommends="recommends"/>
+      <!-- <home-swiper :banners="banners"/> -->
+      <!-- <recommend-view :recommends="recommends"/> -->
       <feature-view/>
   </div>
 </template>
 <script>
-  import HomeSwiper from './childComps/HomeSwiper'
-  import RecommendView from './childComps/RecommendView'
+  // import HomeSwiper from './childComps/HomeSwiper'
+  // import RecommendView from './childComps/RecommendView'
   import FeatureView from './childComps/FeatureView'
 
   import NavBar from 'components/common/navbar/NavBar'
 
-  import { getHomeMultidata, getHomeGoods } from "network/home"
+  // import { getHomeMultidata, getHomeGoods } from "network/home"
 
 export default {
   name: "Home",
   components: {
-    HomeSwiper,
-    RecommendView,
-    FeatureVIew,
+    // HomeSwiper,
+    // RecommendView,
+    FeatureView,
     NavBar
   },
   data() {
     return {
-      banners: [],
-      recommends: []
+      // banners: [],
+      // recommends: []
     }
   },
-  created() {
-    this.getHomeMultidata()
-  },
-  methods: {
-    getHomeMultidata() {
-      getHomeMultidata().then(res => {
-        console.log(res);
-        this.banners = res.data.banner.list;
-        this.recommends = res.data.recommend.list;
-      })
-    }
-  }
+  // created() {
+  //   this.getHomeMultidata()
+  // },
+  // methods: {
+  //   getHomeMultidata() {
+  //     getHomeMultidata().then(res => {
+  //       console.log(res);
+  //       this.banners = res.data.banner.list;
+  //       this.recommends = res.data.recommend.list;
+  //     })
+  //   }
+  // }
 };
 </script>
 <style scoped>
